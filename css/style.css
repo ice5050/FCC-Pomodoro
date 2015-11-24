@@ -1,0 +1,142 @@
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= 'pure-u'] {
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  font-weight: 300;
+
+  box-sizing: border-box;
+
+  color: #616161;
+}
+
+input {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 2px solid #00e5ff;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  margin: 0;
+
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.wrapper {
+  display: table;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.timer {
+  display: table-cell;
+
+  width: 100%;
+
+  vertical-align: middle;
+}
+
+.timer .header {
+  font-size: 4.375em;
+}
+
+.timer .header p {
+  text-align: center;
+  margin: 0;
+}
+
+.timer.pomo p.break-header {
+  display: none;
+}
+
+.timer.break p.pomo-header {
+  display: none;
+}
+
+.timer .time {
+  font-size: 4.375em;
+}
+
+.timer .time .min {
+  text-align: right;
+}
+
+.timer.pomo.init .time .min,
+.timer.break.init .time .min {
+  display: none;
+}
+
+.timer .time .min-txt {
+  display: block;
+
+  margin: 1em 0;
+
+  text-align: right;
+}
+
+.timer.pomo.running .time .min-txt,
+.timer.pomo.pause .time .min-txt,
+.timer.break.runnign .time .min-txt,
+.timer.break.pause .time .min-txt {
+  display: none;
+}
+
+.timer .time .separator {
+  text-align: center;
+}
+
+.timer .time .sec {
+  text-align: left;
+}
+
+.timer .control {
+  text-align: center;
+}
+
+.timer .control a {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 0 1.2em;
+
+  display: inline-block;
+
+  margin: 0 .6em;
+
+  cursor: pointer;
+
+  color: #fff;
+  border-radius: 1em;
+  background-color: #00e5ff;
+  border: 1px solid #00e5ff;
+  transition: all .2s ease-in-out;
+}
+
+.timer .control a:hover {
+  background-color: #fff;
+  color: #00e5ff;
+}
+
+.timer.init .control .pause,
+.timer.init .control .resume,
+.timer.running .control .start,
+.timer.running .control .resume,
+.timer.pause .control .start,
+.timer.pause .control .pause {
+  display: none;
+}
