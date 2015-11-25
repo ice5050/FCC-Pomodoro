@@ -75,6 +75,14 @@ PomodoroTimer.prototype.getState = function() {
   return STATES[this.state];
 };
 
+PomodoroTimer.prototype.getPomoMin = function() {
+  return this.pomodoroTimer.getMin();
+};
+
+PomodoroTimer.prototype.getBreakMin = function() {
+  return this.breakTimer.getMin();
+};
+
 PomodoroTimer.prototype.getRemainingPomoSec = function() {
   return this.pomodoroTimer.getRemainingSec();
 };

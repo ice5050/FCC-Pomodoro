@@ -8,33 +8,48 @@ $(document).ready(function() {
     afterBreakFinish: afterBreakFinish
   });
 
-  $(".timer.pomo").on("change", "#min-txt", function(e) {
+  $(".timer").on("change", ".state.pomo #min-txt", function(e) {
     pomodoroTimer.setPomoMin($(e.currentTarget).val());
     updatePomodoroTimer(pomodoroTimer);
   });
 
-  $(".timer.break").on("change", "#min-txt", function(e) {
+  $(".timer").on("change", ".state.break #min-txt", function(e) {
     pomodoroTimer.setBreakMin($(e.currentTarget).val());
     updateBreakTimer(pomodoroTimer);
   });
 
-  $(".timer.pomo").on("click", ".start", function(e) {
-    $(".timer")
+  $(".timer").on("click", ".state.pomo .start, .state.pomo .resume", function(e) {
+    $(".timer .state")
       .removeClass("init")
       .removeClass("pause")
       .addClass("running");
-    pomodoroTimer.start();
+    pomodoroTimer.pomodoroStart();
   });
 
-  $(".timer").on("click", ".pause", function(e) {
-    $(".timer")
+  $(".timer").on("click", ".state.break .start, .state.break .resume", function(e) {
+    $(".timer .state")
+      .removeClass("init")
+      .removeClass("pause")
+      .addClass("running");
+    pomodoroTimer.breakStart();
+  });
+
+  $(".timer").on("click", ".state.pomo .pause", function(e) {
+    $(".timer .state")
       .removeClass("running")
       .addClass("pause");
-    pomodoroTimer.pause();
+    pomodoroTimer.pomodoroPause();
+  });
+
+  $(".timer").on("click", ".state.break .pause", function(e) {
+    $(".timer .state")
+      .removeClass("running")
+      .addClass("pause");
+    pomodoroTimer.breakPause();
   });
 
   $(".timer").on("click", ".reset", function(e) {
-    $(".timer")
+    $(".timer .state")
       .removeClass("break")
       .removeClass("pause")
       .removeClass("running")
@@ -47,7 +62,7 @@ $(document).ready(function() {
 
 function afterPomodoroFinish() {
   pomodoroTimer.setStateBreakInit();
-  $(".timer")
+  $(".timer .state")
     .removeClass("pomo")
     .removeClass("pause")
     .removeClass("running")
@@ -58,7 +73,7 @@ function afterPomodoroFinish() {
 
 function afterBreakFinish() {
   pomodoroTimer.setStatePomoInit();
-  $(".timer")
+  $(".timer .state")
     .removeClass("break")
     .removeClass("pause")
     .removeClass("running")
@@ -67,22 +82,24 @@ function afterBreakFinish() {
   updatePomodoroTimer(pomodoroTimer);
 }
 
-function updatePomodoroTimer(pomodoroTimer) {
+function updatePomodoroTimer() {
   var $min = $(".min"),
       $minTxt = $(".min-txt"),
       $sec = $(".sec"),
       $minTxt = $("#min-txt");
 
+  $minTxt.val(pomodoroTimer.getPomoMin());
   $min.text(pomodoroTimer.getRemainingPomoMin());
   $sec.text(pomodoroTimer.getRemainingPomoSec());
 }
 
-function updateBreakTimer(breakTimer) {
+function updateBreakTimer() {
   var $min = $(".min"),
       $minTxt = $(".min-txt"),
       $sec = $(".sec"),
       $minTxt = $("#min-txt");
 
-  $min.text(breakTimer.getRemainingBreakMin());
-  $sec.text(breakTimer.getRemainingBreakSec());
+  $minTxt.val(pomodoroTimer.getBreakMin());
+  $min.text(pomodoroTimer.getRemainingBreakMin());
+  $sec.text(pomodoroTimer.getRemainingBreakSec());
 }

@@ -61,11 +61,11 @@ input:focus {
   margin: 0;
 }
 
-.timer.pomo p.break-header {
+.timer .state.pomo p.break-header {
   display: none;
 }
 
-.timer.break p.pomo-header {
+.timer .state.break p.pomo-header {
   display: none;
 }
 
@@ -77,8 +77,8 @@ input:focus {
   text-align: right;
 }
 
-.timer.pomo.init .time .min,
-.timer.break.init .time .min {
+.timer .state.pomo.init .time .min,
+.timer .state.break.init .time .min {
   display: none;
 }
 
@@ -90,10 +90,10 @@ input:focus {
   text-align: right;
 }
 
-.timer.pomo.running .time .min-txt,
-.timer.pomo.pause .time .min-txt,
-.timer.break.runnign .time .min-txt,
-.timer.break.pause .time .min-txt {
+.timer .state.pomo.running .time .min-txt,
+.timer .state.pomo.pause .time .min-txt,
+.timer .state.break.running .time .min-txt,
+.timer .state.break.pause .time .min-txt {
   display: none;
 }
 
@@ -132,11 +132,11 @@ input:focus {
   color: #00e5ff;
 }
 
-.timer.init .control .pause,
-.timer.init .control .resume,
-.timer.running .control .start,
-.timer.running .control .resume,
-.timer.pause .control .start,
-.timer.pause .control .pause {
+.timer .state.init .control .pause,
+.timer .state.init .control .resume,
+.timer .state.running .control .start,
+.timer .state.running .control .resume,
+.timer .state.pause .control .start,
+.timer .state.pause .control .pause {
   display: none;
 }

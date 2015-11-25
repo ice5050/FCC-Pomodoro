@@ -9,40 +9,43 @@
 </head>
 <body>
   <div class="wrapper">
-    <section class="timer pomo init">
-      <div class="pure-g header">
-        <div class="pure-u-1-1">
-          <p class="pomo-header">Pomodoro</p>
-          <p class="break-header">Break</p>
+    <section class="timer">
+      <div class="state pomo init">
+        <div class="pure-g header">
+          <div class="pure-u-1-1">
+            <p class="pomo-header">Pomodoro</p>
+            <p class="break-header">Break</p>
+          </div>
         </div>
-      </div>
-      <div class="pure-g time">
-        <div class="pure-u-6-24"></div>
-        <div class="pure-u-5-24">
-          <p class="min">25</p>
-          <input type="number" class="min-txt" id="min-txt" min="0" value="25">
+        <div class="pure-g time">
+          <div class="pure-u-6-24"></div>
+          <div class="pure-u-5-24">
+            <p class="min">25</p>
+            <input type="number" class="min-txt" id="min-txt" min="0" value="25">
+          </div>
+          <div class="pure-u-2-24">
+            <p class="separator">:</p>
+          </div>
+          <div class="pure-u-5-24">
+            <p class="sec">00</p>
+          </div>
+          <div class="pure-u-6-24"></div>
         </div>
-        <div class="pure-u-2-24">
-          <p class="separator">:</p>
-        </div>
-        <div class="pure-u-5-24">
-          <p class="sec">00</p>
-        </div>
-        <div class="pure-u-6-24"></div>
-      </div>
-      <div class="pure-g control">
-        <div class="pure-u-1-1">
-          <p>
-            <a class="start">Start</a>
-            <a class="resume">Resume</a>
-            <a class="pause">Pause</a>
-            <a class="reset">Reset</a>
-          </p>
+        <div class="pure-g control">
+          <div class="pure-u-1-1">
+            <p>
+              <a class="start">Start</a>
+              <a class="resume">Resume</a>
+              <a class="pause">Pause</a>
+              <a class="reset">Reset</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
   </div>
   <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/timer.js"></script>
   <script src="js/pomodoro-timer.js"></script>
   <script src="js/script.js"></script>
 </body>

@@ -15,7 +15,7 @@ Timer.prototype.start = function() {
   }
   this.setStateRunning();
   this.timerId = setInterval(function() {
-    if (this.currentTime >= this.endTime) {
+    if (that.currentTime >= that.endTime) {
       that.finish();
       return;
     }
@@ -83,6 +83,10 @@ Timer.prototype.isEnded = function() {
 
 Timer.prototype.setMin = function(min) {
   this.endTime = +min * 60;
+};
+
+Timer.prototype.getMin = function() {
+  return Math.floor(this.endTime / 60);
 };
 
 Timer.prototype.getRemainingMin = function() {
